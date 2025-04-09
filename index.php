@@ -41,6 +41,7 @@ include_once 'templates/header.php';
                                 <th scope="col">Nome</th>
                                 <th scope="col">Telefone</th>
                                 <th scope="col">Ramo de atividade</th>
+                                <th scope="col">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,6 +54,7 @@ include_once 'templates/header.php';
                                     <td scope="actions">
                                         <a href="#" class="btn btn-primary"> <span class="fas fa-eye check-icon"></span> Visualizar</a>
                                         <a href="#" class="btn btn-success"> <span class="bi bi-pencil-square"></span> Editar</a>
+                                        <a href="#" class="btn btn-danger"> <span class="bi bi-trash"></span> Excluir</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
