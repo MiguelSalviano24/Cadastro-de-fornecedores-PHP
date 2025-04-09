@@ -52,6 +52,7 @@ include_once 'templates/header.php';
                                     <td scope="row"><?= $fornecedor['activity'] ?></td>
                                     <td scope="actions">
                                         <a href="#" class="btn btn-primary"> <span class="fas fa-eye check-icon"></span> Visualizar</a>
+                                        <a href="#" class="btn btn-success"> <span class="bi bi-pencil-square"></span> Editar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
