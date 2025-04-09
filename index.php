@@ -30,7 +30,34 @@ include_once 'templates/header.php';
             <?php endif; ?>
             <h1 id="main-title">Meus fornecedores</h1>
             <?php if (count($fornecedores) > 0): ?>
-                <p>Tem contatos</p>;
+                <div
+                    class="table-responsive">
+                    <table
+                        class="table table-default"
+                        id="fornecedores-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Telefone</th>
+                                <th scope="col">Ramo de atividade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($fornecedores as $fornecedor): ?>
+                                <tr class="">
+                                    <td scope="row"><?= $fornecedor['id'] ?></td>
+                                    <td scope="row"><?= $fornecedor['name'] ?></td>
+                                    <td scope="row"><?= $fornecedor['phone'] ?></td>
+                                    <td scope="row"><?= $fornecedor['activity'] ?></td>
+                                    <td scope="actions">
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+
             <?php else: ?>
                 <p id="empty-list-text">Ainda não há fornecedores cadastrados <a href="create.php">Clique aqui para adicionar</a></p>
             <?php endif; ?>
