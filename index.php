@@ -53,7 +53,7 @@ include_once 'templates/header.php';
                                     <td scope="row"><?= $fornecedor['activity'] ?></td>
                                     <td scope="actions">
                                         <a href="visualize.php?id=<?= $fornecedor['id'] ?>" class="btn btn-primary btn-sm"><span class="fas fa-eye check-icon"></span> Visualizar</a>
-                                        <a href="#" class="btn btn-success btn-sm"> <span class="bi bi-pencil-square"></span> Editar</a>
+                                        <a href="edit.php?id=<?= $fornecedor['id'] ?>" class="btn btn-success btn-sm"> <span class="bi bi-pencil-square"></span> Editar</a>
                                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_usuario" value="<?= $usuario['id'] ?>" class="btn btn-danger btn-sm"><span class="bi bi-trash"></span>Excluir</button>
                                     </td>
                                 </tr>
