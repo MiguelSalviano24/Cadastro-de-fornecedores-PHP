@@ -59,3 +59,9 @@
     border-radius: 4px;
     padding: 5px;
 }
+
+#create-form {
+    width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+}
