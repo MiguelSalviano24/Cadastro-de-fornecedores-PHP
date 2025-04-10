@@ -52,9 +52,13 @@ include_once 'templates/header.php';
                                     <td scope="row"><?= $fornecedor['phone'] ?></td>
                                     <td scope="row"><?= $fornecedor['activity'] ?></td>
                                     <td scope="actions">
-                                        <a href="visualize.php?id=<?= $fornecedor['id'] ?>" class="btn btn-primary btn-sm"><span class="fas fa-eye check-icon"></span> Visualizar</a>
-                                        <a href="edit.php?id=<?= $fornecedor['id'] ?>" class="btn btn-success btn-sm"> <span class="bi bi-pencil-square"></span> Editar</a>
-                                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_usuario" value="<?= $usuario['id'] ?>" class="btn btn-danger btn-sm"><span class="bi bi-trash"></span>Excluir</button>
+                                        <form action="../fornecedores/config/actions.php" method="POST">
+                                            <a href="visualize.php?id=<?= $fornecedor['id'] ?>" class="btn btn-primary btn-sm"><span class="fas fa-eye check-icon"></span> Visualizar</a>
+                                            <a href="edit.php?id=<?= $fornecedor['id'] ?>" class="btn btn-success btn-sm"> <span class="bi bi-pencil-square"></span> Editar</a>
+                                            <input type="hidden" name="type" value="delete">
+                                            <input type="hidden" name="id" value="<?= $fornecedor['id'] ?>">
+                                            <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" class="btn btn-danger btn-sm"><span class="bi bi-trash"></span>Excluir</button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

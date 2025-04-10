@@ -55,6 +55,27 @@ if (!empty($data)) {
             $error = $e->getMessage();
             echo 'Erro $error';
         }
+
+        // Deletar fornecedor
+    } else if ($data['type'] === 'delete') {
+
+        $id = $data['id'];
+
+        $sql = "DELETE FROM fornecedores WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(":id", $id);
+
+        try {
+            $stmt->execute();
+            $_SESSION['msg'] = "Fornecedor deletado com sucesso";
+            header('Location: ../index.php');
+        } catch (PDOException $e) {
+            // Erro na conexao
+            $error = $e->getMessage();
+            echo 'Erro $error';
+        }
     }
 
     // Redirect home
