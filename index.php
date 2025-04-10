@@ -25,7 +25,6 @@ include_once 'templates/header.php';
     </header>
     <main>
         <div class="container">
-            <p id="msg">Testando mensagem</p>
             <?php if (isset($printMsg) && $printMsg != ''): ?>
                 <p id="msg"><?= $printMsg ?></p>
             <?php endif; ?>
