@@ -43,3 +43,19 @@
     max-width: 500px;
     margin: 0 auto;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.back-link-container {
+    display: block;
+    width: 500px;
+    margin: 30px auto 0;
+}
+
+#back-link {
+    border: 1px solid rgb(19, 101, 169);
+    border-radius: 4px;
+    padding: 5px;
+}
