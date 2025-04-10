@@ -29,6 +29,32 @@ if (!empty($data)) {
             $error = $e->getMessage();
             echo 'Erro $error';
         }
+
+        // Atualizar fornecedor
+    } else if ($data['type'] === 'edit') {
+
+        $name = $data['name'];
+        $phone = $data['phone'];
+        $activity = $data['activity'];
+        $id = $data['id'];
+
+        $sql = "UPDATE fornecedores SET name = :name, phone = :phone, activity = :activity WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":phone", $phone);
+        $stmt->bindParam(":activity", $activity);
+        $stmt->bindParam(":id", $id);
+
+        try {
+            $stmt->execute();
+            $_SESSION['msg'] = "Fornecedor atualizado com sucesso";
+        } catch (PDOException $e) {
+            // Erro na conexao
+            $error = $e->getMessage();
+            echo 'Erro $error';
+        }
     }
 
     // Redirect home
