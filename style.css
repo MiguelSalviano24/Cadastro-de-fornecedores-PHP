@@ -3,3 +3,8 @@
     width: 50px;
     margin-left: 40px;
 }
+
+#main-title {
+    text-align: center;
+    margin: 15px 0 30px;
+}

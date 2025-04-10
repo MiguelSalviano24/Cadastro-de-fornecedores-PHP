@@ -15,7 +15,7 @@ include_once 'templates/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/fornecedores/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -52,9 +52,9 @@ include_once 'templates/header.php';
                                     <td scope="row"><?= $fornecedor['phone'] ?></td>
                                     <td scope="row"><?= $fornecedor['activity'] ?></td>
                                     <td scope="actions">
-                                        <a href="#" class="btn btn-primary"> <span class="fas fa-eye check-icon"></span> Visualizar</a>
-                                        <a href="#" class="btn btn-success"> <span class="bi bi-pencil-square"></span> Editar</a>
-                                        <a href="#" class="btn btn-danger"> <span class="bi bi-trash"></span> Excluir</a>
+                                        <a href="#" class="btn btn-primary btn-sm"> <span class="fas fa-eye check-icon"></span> Visualizar</a>
+                                        <a href="#" class="btn btn-success btn-sm"> <span class="bi bi-pencil-square"></span> Editar</a>
+                                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_usuario" value="<?= $usuario['id'] ?>" class="btn btn-danger btn-sm"><span class="bi bi-trash"></span>Excluir</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
