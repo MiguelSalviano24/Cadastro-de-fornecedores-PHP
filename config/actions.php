@@ -1,14 +1,29 @@
 <?php
 session_start();
-
 include_once 'connection.php';
 
-$sql = "SELECT * FROM fornecedores";
+$id;
 
-$fornecedores = [];
+if (!empty($_GET)) {
+    $id = $_GET['id'];
+}
 
-$stmt = $conn->prepare($sql);
+if (!empty($id)) {
 
-$stmt->execute();
+    $sql = "SELECT * FROM fornecedores WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    $fornecedor = $stmt->fetch();
+} else {
 
-$fornecedores = $stmt->fetchAll();
+    $sql = "SELECT * FROM fornecedores";
+
+    $fornecedores = [];
+
+    $stmt = $conn->prepare($sql);
+
+    $stmt->execute();
+
+    $fornecedores = $stmt->fetchAll();
+}
